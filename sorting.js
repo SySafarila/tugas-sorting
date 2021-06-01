@@ -19,3 +19,17 @@ const fruitsSorting = () => {
   return (document.getElementById("fruitsSorting").innerHTML =
     result.join("\n"));
 };
+
+// Dengan sorting terbalik
+const fruitsSortingReverse = () => {
+  let sort = fruits.sort().reverse(); // Sorting (Mengurutkan) data secara ascending
+
+  // Memisahkan buah-buah
+  let result = sort.map((fruit) => {
+    return `<li>${fruit}</li>`;
+  });
+
+  // Menampilkan data
+  return (document.getElementById("fruitsSortingReverse").innerHTML =
+    result.join("\n"));
+};
