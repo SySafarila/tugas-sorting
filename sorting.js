@@ -33,3 +33,31 @@ const fruitsSortingReverse = () => {
   return (document.getElementById("fruitsSortingReverse").innerHTML =
     result.join("\n"));
 };
+
+// bubbleSort
+let bubbleSort = (inputArr) => {
+  let len = inputArr.length;
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < len; i++) {
+      if (inputArr[i] > inputArr[i + 1]) {
+        let tmp = inputArr[i];
+        inputArr[i] = inputArr[i + 1];
+        inputArr[i + 1] = tmp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+
+  let result = inputArr.map((fruit) => {
+    return `<li>${fruit}</li>`;
+  });
+
+  // Menampilkan data
+  return (document.getElementById("bubbleSort").innerHTML = result.join("\n"));
+};
+
+const sortingWithBubbleSort = () => {
+  bubbleSort(fruits);
+};
